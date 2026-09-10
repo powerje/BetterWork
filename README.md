@@ -8,6 +8,14 @@ Like the woman said, you [better work](https://www.youtube.com/watch?v=szhf51FTY
 
 Interval timers for Android phones and Wear OS watches.
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/images/android-app.png" alt="BetterWork routine library on Android" width="280">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/images/wear-os-app.png" alt="BetterWork routine picker on Wear OS" width="280">
+</p>
+
 ## Features
 
 - [Japanese Walking](https://japaneseintervalwalking.com/blog/japanese-walking-your-complete-guide/), [Tabata](https://www.womenshealthmag.com/fitness/a34221488/what-is-tabata/), [Pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique), and custom routines
