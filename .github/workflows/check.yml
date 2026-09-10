@@ -16,10 +16,21 @@ jobs:
         uses: actions/cache@v5
         with:
           path: |
-            ${{ env.ANDROID_SDK_ROOT }}/platforms/android-37.0
-            ${{ env.ANDROID_SDK_ROOT }}/build-tools/37.0.0
+            ${{ runner.temp }}/android-sdk-cache/platforms/android-37.0
+            ${{ runner.temp }}/android-sdk-cache/build-tools/37.0.0
           key: ${{ runner.os }}-android-sdk-37.0.0
+      - name: Restore cached Android SDK packages
+        run: |
+          mkdir -p "$ANDROID_SDK_ROOT/platforms" "$ANDROID_SDK_ROOT/build-tools"
+          cp -a "$RUNNER_TEMP/android-sdk-cache/platforms/android-37.0" "$ANDROID_SDK_ROOT/platforms/" 2>/dev/null || true
+          cp -a "$RUNNER_TEMP/android-sdk-cache/build-tools/37.0.0" "$ANDROID_SDK_ROOT/build-tools/" 2>/dev/null || true
       - run: sdkmanager 'platforms;android-37.0' 'build-tools;37.0.0'
+      - name: Stage Android SDK packages for caching
+        run: |
+          mkdir -p "$RUNNER_TEMP/android-sdk-cache/platforms" "$RUNNER_TEMP/android-sdk-cache/build-tools"
+          rm -rf "$RUNNER_TEMP/android-sdk-cache/platforms/android-37.0" "$RUNNER_TEMP/android-sdk-cache/build-tools/37.0.0"
+          cp -a "$ANDROID_SDK_ROOT/platforms/android-37.0" "$RUNNER_TEMP/android-sdk-cache/platforms/"
+          cp -a "$ANDROID_SDK_ROOT/build-tools/37.0.0" "$RUNNER_TEMP/android-sdk-cache/build-tools/"
       - uses: gradle/actions/setup-gradle@v6
       - run: ./gradlew precommit
       - uses: actions/upload-artifact@v6
