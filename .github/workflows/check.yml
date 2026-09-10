@@ -20,9 +20,9 @@ jobs:
             ${{ env.ANDROID_SDK_ROOT }}/build-tools/37.0.0
           key: ${{ runner.os }}-android-sdk-37.0.0
       - run: sdkmanager 'platforms;android-37.0' 'build-tools;37.0.0'
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
       - run: ./gradlew precommit
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: debug-apks
           path: '**/build/outputs/apk/debug/*.apk'
