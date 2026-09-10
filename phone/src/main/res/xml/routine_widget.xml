@@ -1,0 +1,9 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="160dp" android:minHeight="64dp"
+    android:minResizeWidth="160dp" android:minResizeHeight="64dp"
+    android:targetCellWidth="2" android:targetCellHeight="1"
+    android:resizeMode="horizontal|vertical" android:widgetCategory="home_screen"
+    android:widgetFeatures="reconfigurable" android:updatePeriodMillis="0"
+    android:initialLayout="@layout/glance_default_loading_layout"
+    android:previewLayout="@layout/routine_widget_preview"
+    android:configure="dev.betterwork.phone.WidgetConfigurationActivity" />

@@ -1,0 +1,23 @@
+complexity:
+  LongMethod:
+    threshold: 100
+  LongParameterList:
+    functionThreshold: 12
+    constructorThreshold: 15
+  TooManyFunctions:
+    thresholdInFiles: 30
+    thresholdInClasses: 30
+  CyclomaticComplexMethod:
+    threshold: 25
+style:
+  MagicNumber:
+    active: false
+  MaxLineLength:
+    maxLineLength: 120
+  ReturnCount:
+    max: 5
+  WildcardImport:
+    active: false
+naming:
+  FunctionNaming:
+    ignoreAnnotated: ['Composable']

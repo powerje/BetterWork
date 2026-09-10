@@ -1,0 +1,13 @@
+CREATE TABLE stored_value (
+  key TEXT NOT NULL PRIMARY KEY,
+  json TEXT NOT NULL
+);
+
+selectValue:
+SELECT json FROM stored_value WHERE key = ?;
+
+putValue:
+INSERT OR REPLACE INTO stored_value(key, json) VALUES (?, ?);
+
+removeValue:
+DELETE FROM stored_value WHERE key = ?;

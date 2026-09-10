@@ -1,0 +1,21 @@
+# Build output and machine state
+.gradle/
+.kotlin/
+**/build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+key.properties
+signing.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Python acceptance tools
+__pycache__/
