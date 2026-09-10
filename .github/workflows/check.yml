@@ -12,6 +12,13 @@ jobs:
           distribution: temurin
           java-version: '21'
       - uses: android-actions/setup-android@v4
+      - name: Cache Android SDK packages
+        uses: actions/cache@v5
+        with:
+          path: |
+            ${{ env.ANDROID_SDK_ROOT }}/platforms/android-37.0
+            ${{ env.ANDROID_SDK_ROOT }}/build-tools/37.0.0
+          key: ${{ runner.os }}-android-sdk-37.0.0
       - run: sdkmanager 'platforms;android-37.0' 'build-tools;37.0.0'
       - uses: gradle/actions/setup-gradle@v4
       - run: ./gradlew precommit
