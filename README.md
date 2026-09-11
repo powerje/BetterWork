@@ -63,6 +63,3 @@ just precommit  # Full local verification gate
 | `phone` | Android phone app and widgets |
 | `wear` | Wear OS app |
 
-## Status
-
-BetterWork is an early development build. Automated checks cover the core engine and representative Android and Wear OS flows. Physical vibration delivery, paired-device transport, and long-duration hardware runs still need release validation.
